@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y libtool
 # an essential!!
 RUN apt-get update && apt-get install -y ccache
 RUN echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+# edit /etc/gitlab-runner/config.toml and add the line below
+# volumes = ["/cache", "/home/gitlab-runner/.ccache":"/root/.ccache"]
+RUN mkdir -p /root/.ccache
 
 # Just an alternative toolchain (it's generally good if code can compile with both gcc and clang)
 RUN apt-get update && apt-get install -y clang
