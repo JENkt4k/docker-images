@@ -27,3 +27,4 @@ RUN sh -c 'cd /usr/src/gtest && make clean && rm -Rf CMakeCache.txt CMakeFiles/ 
 RUN rm /bin/sh && ln -sf /bin/bash /bin/sh
 
 WORKDIR /root
+
