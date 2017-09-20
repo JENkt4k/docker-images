@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y build-essential
 RUN apt-get update && apt-get install -y autotools-dev
 RUN apt-get update && apt-get install -y autoconf
 RUN apt-get update && apt-get install -y libtool
+# an essential!!
+RUN apt-get update && apt-get install -y ccache
+RUN echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
 
 # Just an alternative toolchain (it's generally good if code can compile with both gcc and clang)
 RUN apt-get update && apt-get install -y clang
