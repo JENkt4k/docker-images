@@ -10,17 +10,20 @@ RUN apt-get update && apt-get install -y autotools-dev
 RUN apt-get update && apt-get install -y autoconf
 RUN apt-get update && apt-get install -y libtool
 # an essential!!
-RUN apt-get update && apt-get install -y ccache
-RUN echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+#RUN apt-get update && apt-get install -y ccache
+#RUN echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
 # edit /etc/gitlab-runner/config.toml and add the line below
 # volumes = ["/cache", "/home/gitlab-runner/.ccache":"/root/.ccache"]
-RUN mkdir -p /root/.ccache
+#RUN mkdir -p /root/.ccache
+
+# required for some CI stuff
+RUN apt-get update && apt-get install -y curl
 
 # Just an alternative toolchain (it's generally good if code can compile with both gcc and clang)
 RUN apt-get update && apt-get install -y clang
 
 # cmake is a build dependency for Google Test Framework (gtest) as well as other projects
-RUN apt-get install -y cmake
+RUN apt-get update && apt-get install -y cmake
 
 # install gtest headers
 RUN apt-get install -y libgtest-dev
