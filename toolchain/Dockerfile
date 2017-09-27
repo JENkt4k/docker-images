@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y libtool
 
 # required for some CI stuff
 RUN apt-get update && apt-get install -y curl
+RUN apt-get update && apt-get install -y python3
 
 # Just an alternative toolchain (it's generally good if code can compile with both gcc and clang)
 RUN apt-get update && apt-get install -y clang
