@@ -1,0 +1,4 @@
+PACKAGECLOUD_REPO="raspberry-pi2"
+RELEASE_PACKAGE="gitlab-ce_10.1.0-ce.0_armhf.deb"
+RELEASE_VERSION="10.1.0-ce.0"
+DOWNLOAD_URL="https://packages.gitlab.com/gitlab/raspberry-pi2/packages/raspbian/jessie/gitlab-ce_10.1.0-ce.0_armhf.deb/download"
