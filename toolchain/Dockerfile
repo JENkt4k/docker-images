@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:artful
 MAINTAINER Christopher Friedt "chrisfriedt@gmail.com"
 
 USER root
