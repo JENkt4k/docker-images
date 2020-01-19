@@ -1,0 +1,16 @@
+web:
+  image: 'cfriedt/armhf-gitlab-ce:10.1.2-ce.0'
+  restart: always
+  hostname: '192.168.1.28'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'https://192.168.1.28:10080'
+  ports:
+    - '10080:80'
+    - '10443:443'
+    - '10022:22'
+  volumes:
+    - '/var/run/docker.sock:/var/run/docker.sock'
+    - '/data/config:/etc/gitlab'
+    - '/data/logs:/var/log/gitlab' 
+    - '/data/data:/var/opt/gitlab'
